@@ -5,15 +5,29 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:e_com_app/components/horizontal_listview.dart';
 import 'package:e_com_app/components/products.dart';
 import 'package:e_com_app/pages/cart.dart';
+import './components/ironing.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    ),
-  );
+   App());
 }
+
+class App extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+
+  return MaterialApp(
+  debugShowCheckedModeBanner: false,
+  routes:{
+  "/":(context)=>HomePage(),
+  "/ironing":(context)=>Ironing()
+  }
+  );}
+}
+
+
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,7 +63,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.1,
         title: Text('Laundro'),
         centerTitle: true,
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.blue,
         actions: <Widget>[
           new IconButton(
               icon: Icon(
@@ -189,33 +203,26 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: new ListView(
+
         children: <Widget>[
           image_carousel,
-          new Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: new Text(
-              'Category',
-              style: TextStyle(
-                fontSize: 18.0,
-              ),
-            ),
-          ),
-          //horizontal list
-          HorizontalList(),
+
 
           new Padding(
             padding: const EdgeInsets.all(8.0),
+
             child: new Text(
-              'Recent Products',
+              'Services:',
               style: TextStyle(
                 fontSize: 18.0,
               ),
             ),
           ),
           Container(
-            height: 340.0,
+            color: Colors.white,
+            height: 360.0,
             child: Products(),
-          )
+          ),
         ],
       ),
     );
