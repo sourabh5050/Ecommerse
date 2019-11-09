@@ -74,6 +74,7 @@ class Single_cart_product extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(0),
                   child: Text("Size:"),
+
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

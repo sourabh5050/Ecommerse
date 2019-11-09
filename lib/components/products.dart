@@ -18,7 +18,7 @@ class _ProductsState extends State<Products> {
             Row(
             children: <Widget>[
               Expanded(child: GestureDetector(
-                onTap:()=> Navigator.pushReplacementNamed(context, '/ironing'),
+                onTap:()=> Navigator.pushNamed(context, '/ironing'),
                 child: Container(
                   margin: EdgeInsets.all(10.0),
                 height: 170.0,
@@ -48,7 +48,7 @@ class _ProductsState extends State<Products> {
                  margin: EdgeInsets.fromLTRB(10.0,0.0,10.0,10.0),
                  height: 170,
                  decoration: BoxDecoration(
-                   image: DecorationImage(image: ExactAssetImage('images/products/drycleaning.png')),
+                   image: DecorationImage(image: ExactAssetImage('images/products/Dry.png')),
 
                    color: Colors.red,
                    borderRadius: BorderRadius.circular(10.0),
@@ -57,7 +57,7 @@ class _ProductsState extends State<Products> {
                  margin: EdgeInsets.fromLTRB(10.0,0.0,10.0,10.0),
                  height: 170,
                  decoration: BoxDecoration(
-
+                   image: DecorationImage(image: ExactAssetImage('images/products/tailoring.png')),
                    color: Colors.red,
                    borderRadius: BorderRadius.circular(10.0),
                  ),)),

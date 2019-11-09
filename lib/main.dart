@@ -6,6 +6,8 @@ import 'package:e_com_app/components/horizontal_listview.dart';
 import 'package:e_com_app/components/products.dart';
 import 'package:e_com_app/pages/cart.dart';
 import './components/ironing.dart';
+import './pages/aboutus.dart';
+import './pages/myaccount.dart';
 
 void main() {
   runApp(
@@ -21,7 +23,9 @@ class App extends StatelessWidget{
   debugShowCheckedModeBanner: false,
   routes:{
   "/":(context)=>HomePage(),
-  "/ironing":(context)=>Ironing()
+  "/ironing":(context)=>Ironing(),
+    "/aboutus":(context)=>About(),
+    "/myaccount":(context)=>Myaccount()
   }
   );}
 }
@@ -65,12 +69,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.blue,
         actions: <Widget>[
-          new IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {}),
+
           new IconButton(
               icon: Icon(
                 Icons.shopping_cart,
@@ -92,24 +91,27 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             //header
             new UserAccountsDrawerHeader(
+
               accountName: Text('Abhishek Mahajan'),
               accountEmail: Text('abhishekmah98@gmail.com'),
               currentAccountPicture: GestureDetector(
-                child: new CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
+              child: new CircleAvatar(
+                backgroundColor: Colors.grey,
+                child: Icon(
+                  Icons.person,
+                  color: Colors.white,
                 ),
               ),
+            ),
+
               decoration: new BoxDecoration(
-                color: Colors.pinkAccent,
+
+                color: Colors.blue,
               ),
             ),
             //body
             InkWell(
-              onTap: () {},
+              onTap: ()=> Navigator.pushNamed(context, '/'),
               child: ListTile(
                 title: Text('Home'),
                 leading: Icon(
@@ -119,7 +121,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Navigator.pushNamed(context, '/myaccount'),
               child: ListTile(
                 title: Text('My Account'),
                 leading: Icon(
@@ -131,7 +133,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Orders'),
+                title: Text('Previous Orders'),
                 leading: Icon(
                   Icons.shopping_basket,
                   color: Colors.pinkAccent,
@@ -155,22 +157,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('Offers'),
-                leading: Icon(
-                  Icons.card_giftcard,
-                  color: Colors.pinkAccent,
-                ),
-              ),
-            ),
+
             Divider(
               color: Colors.teal,
               height: 5,
             ),
             InkWell(
-              onTap: () {},
+
+              onTap: ()=>Navigator.pushNamed(context, '/aboutus'),
               child: ListTile(
                 title: Text('About us'),
                 leading: Icon(
@@ -208,16 +202,7 @@ class _HomePageState extends State<HomePage> {
           image_carousel,
 
 
-          new Padding(
-            padding: const EdgeInsets.all(8.0),
 
-            child: new Text(
-              'Services:',
-              style: TextStyle(
-                fontSize: 18.0,
-              ),
-            ),
-          ),
           Container(
             color: Colors.white,
             height: 360.0,
